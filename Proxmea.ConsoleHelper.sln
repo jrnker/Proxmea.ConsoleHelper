@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30709.132
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxmea.ConsoleHelper", "Proxmea.ConsoleHelper\Proxmea.ConsoleHelper.csproj", "{E0B15983-FED6-4D5F-8E91-BA3B32EEA831}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proxmea.ConsoleHelper.TestConsoleAppCore", "Proxmea.ConsoleHelper.TestConsoleAppCore\Proxmea.ConsoleHelper.TestConsoleAppCore.csproj", "{06434249-EE18-4E31-A0C6-9BFDA2933A14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0B15983-FED6-4D5F-8E91-BA3B32EEA831}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B15983-FED6-4D5F-8E91-BA3B32EEA831}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B15983-FED6-4D5F-8E91-BA3B32EEA831}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B15983-FED6-4D5F-8E91-BA3B32EEA831}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06434249-EE18-4E31-A0C6-9BFDA2933A14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06434249-EE18-4E31-A0C6-9BFDA2933A14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06434249-EE18-4E31-A0C6-9BFDA2933A14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06434249-EE18-4E31-A0C6-9BFDA2933A14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {05B05927-8D9D-4C08-BCFD-04423EC7E1FA}
+	EndGlobalSection
+EndGlobal
