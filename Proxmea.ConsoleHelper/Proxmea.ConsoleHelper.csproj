@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Proxmea.ConsoleHelper</AssemblyName>
@@ -7,11 +6,9 @@
     <Authors>Christoffer Järnåker</Authors>
     <Company>Proxmea AB</Company>
     <Copyright>Copyright (c) 2020 Proxmea AB</Copyright>
-    <Version>1.0.0.0</Version>
+    <Version>1.0.0.1</Version>
   </PropertyGroup>
-
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="if &quot;$(ConfigurationName)&quot;==&quot;Debug&quot; Goto Debug&#xD;&#xA;if &quot;$(ConfigurationName)&quot;==&quot;Release&quot; Goto Release&#xD;&#xA;Goto End&#xD;&#xA;&#xD;&#xA;:Debug&#xD;&#xA;if exist &quot;C:\repo\Distribution\tools\bumpversions.exe&quot; (&#xD;&#xA;C:\repo\Distribution\tools\bumpversions.exe $(ProjectDir) -revision -reset&#xD;&#xA;)&#xD;&#xA;Goto End&#xD;&#xA;&#xD;&#xA;:Release&#xD;&#xA;&#xD;&#xA;if exist &quot;C:\repo\Distribution\tools\bumpversions.exe&quot; (&#xD;&#xA;C:\repo\Distribution\tools\bumpversions.exe $(ProjectDir) -build -reset&#xD;&#xA;)&#xD;&#xA;Goto End&#xD;&#xA;&#xD;&#xA;:End" />
   </Target>
-
 </Project>

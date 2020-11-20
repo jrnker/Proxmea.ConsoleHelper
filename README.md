@@ -1,7 +1,12 @@
 
 # Proxmea.ReadConsole
 A .Net Core library that allows for searching and reading in an .Net consoles output  
+
+## Demo
 Comes with example Console app.  
+![](Demo.gif)
+
+
 
 ## Credits
 Thanks to Simon Mourier and Derviş Kayımbaşıoğlu for your great input on Stackoverflow  

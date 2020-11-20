@@ -1,5 +1,5 @@
-﻿using Proxmea;
-using System;
+﻿using System;
+using System.Threading;
 
 namespace Proxmea.ConsoleHelper.TestConsoleAppCore
 {
@@ -7,13 +7,13 @@ namespace Proxmea.ConsoleHelper.TestConsoleAppCore
     {
         static void Main(string[] args)
         {
-            Console.Clear();
+            Console.Clear(); 
 
             // Let's draw some stuff
             Populate_Console();
 
             // Find the border characters
-            var found = ReadConsole.IndexOfInConsole(new[] { "│", "─", "┌", "┐", "┘", "└" });
+            var found = ReadConsole.IndexOfInConsole(new[] { "┌", "┐", "└", "┘", "│", "─" });
 
             // Let's save the current position
             var curPos = ReadConsole.GetCursorPosition();
@@ -23,13 +23,14 @@ namespace Proxmea.ConsoleHelper.TestConsoleAppCore
             {
                 Console.SetCursorPosition(c.X, c.Y);
                 Console.Write("*");
+                Thread.Sleep(100);
             }
 
             // Your output should now not have a border with lines, but with *'s
 
             // Move back the cursor
             Console.SetCursorPosition(curPos.X, curPos.Y);
-            Console.Write("Done");
+            Console.WriteLine("Done");
 
             // Just to check, let's fetch a character on a known position and check it
             var character = ReadConsole.GetChar(1, 1);
@@ -43,20 +44,27 @@ namespace Proxmea.ConsoleHelper.TestConsoleAppCore
 
             // Just to check some more more, let's fetch a whole line. 
             // This will be the full line, including the trailing empty spaces
-            var line = ReadConsole.GetText(0, 4);  
+            var line = ReadConsole.GetText(0, 4);
+
+            // Search for a string
+            var stringToFind = "H I J";
+            found = ReadConsole.IndexOfInConsole(stringToFind);
+            Console.WriteLine($"Searching for {stringToFind}");
+            foreach (var f in found)
+                Console.WriteLine($"  Found at X {f.X}, Y {f.Y}");
         }
 
         static void Populate_Console()
         {
             Console.Clear();
-            Console.Write(@"
- ┌───────┐
-1│C D E F│
-2│G H I J│
-3│K L M N│
-4│O P Q R│
+            Console.Write(@"Y Find and replace border with *, with a delay
+↓┌───────┐
+2│C D E F│
+3│G H I J│
+4│K L M N│
+5│O P Q R│
  └───────┘
-  2 4 6 8          ");
+X→2 4 6 8          ");
             Console.Write('\n');
         }
     }
