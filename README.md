@@ -4,9 +4,10 @@ A .Net Core library that allows for searching and reading in an .Net consoles ou
 
 ## Demo
 Comes with example Console app.  
-![](Demo.gif)
-
-
+![](Demo.gif)  
+The demo draws out a box with letters in it.  
+Then we search for the border coordinates and replaces it with an asterix.  
+Finally we do a general search for a text existing in the console and show the coordinates.   
 
 ## Credits
 Thanks to Simon Mourier and Derviş Kayımbaşıoğlu for your great input on Stackoverflow  
