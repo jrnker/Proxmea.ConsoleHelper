@@ -17,12 +17,25 @@ namespace Proxmea.ConsoleHelper
             // Get a handle for the console
             var stdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
-            // Get Console Info
-            if (!GetConsoleScreenBufferInfo(stdout, out CONSOLE_SCREEN_BUFFER_INFO outInfo))
-                throw new Win32Exception();
-
             // In .net 5 there's Console.GetCursorPosition for this
-            return outInfo.dwCursorPosition;
+            return GetConsoleInfo(stdout).dwCursorPosition;
+        }
+        /// <summary>
+        /// Retrieves information about the current screen buffer window
+        /// </summary>
+        /// <param name="ptr"></param>
+        /// <returns></returns>
+        public static CONSOLE_SCREEN_BUFFER_INFO GetConsoleInfo()
+        {
+            // Get a handle for the console
+            var stdout = GetStdHandle(STD_OUTPUT_HANDLE);
+            return GetConsoleInfo(stdout);
+        }
+        public static CONSOLE_SCREEN_BUFFER_INFO GetConsoleInfo(IntPtr ptr)
+        {
+            if (!GetConsoleScreenBufferInfo(ptr, out CONSOLE_SCREEN_BUFFER_INFO outInfo))
+                throw new Win32Exception();
+            return outInfo;
         }
         /// <summary>
         /// Find text in console window
@@ -46,10 +59,9 @@ namespace Proxmea.ConsoleHelper
             var stdout = GetStdHandle(STD_OUTPUT_HANDLE);
 
             // Get Console Info
-            if (!GetConsoleScreenBufferInfo(stdout, out CONSOLE_SCREEN_BUFFER_INFO outInfo))
-                throw new Win32Exception();
+            var consoleInfo = GetConsoleInfo(stdout);
 
-            for (int y = 0; y < outInfo.dwCursorPosition.Y; y += 1)
+            for (int y = 0; y < consoleInfo.dwCursorPosition.Y; y += 1)
             {
                 var line = GetText(0, y, stdout);
 
@@ -155,11 +167,10 @@ namespace Proxmea.ConsoleHelper
         public static string GetText(int x, int y, IntPtr ptr)
         {
             // Get Console Info
-            if (!GetConsoleScreenBufferInfo(ptr, out CONSOLE_SCREEN_BUFFER_INFO outInfo))
-                throw new Win32Exception();
+            var consoleInfo = GetConsoleInfo(ptr);
 
             // Let's call it with the remaining bit of the x screen buffer
-            return GetText(x, y, outInfo.dwSize.X - y, ptr);
+            return GetText(x, y, consoleInfo.dwSize.X - y, ptr);
         }
         /// <summary>
         /// Retrieve text from console window
