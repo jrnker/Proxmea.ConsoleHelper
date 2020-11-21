@@ -16,13 +16,15 @@ https://stackoverflow.com/questions/54317061/redirect-output-from-running-proces
 
 ## Methods 
 **ReadConsole.GetChar**  
-Retrieves a character given its position  
-**ReadConsole.GetCursorPosition**  
-Gets the current cursor position  
+Gets a character given its position  
 **ReadConsole.GetText**  
-Retrieves a text given its position  
+Gets a text given its position   
 **ReadConsole.IndexOfInConsole**  
 Finds all occurrences of a text in the console  
+**ReadConsole.GetCursorPosition**  
+Gets the current cursor position  
+**ReadConsole.GetConsoleInfo**  
+Gets all information about the console window  
 
 ## License
 MIT License - See license file  
