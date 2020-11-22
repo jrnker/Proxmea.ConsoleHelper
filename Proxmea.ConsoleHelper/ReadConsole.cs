@@ -170,7 +170,7 @@ namespace Proxmea.ConsoleHelper
             var consoleInfo = GetConsoleInfo(ptr);
 
             // Let's call it with the remaining bit of the x screen buffer
-            return GetText(x, y, consoleInfo.dwSize.X - y, ptr);
+            return GetText(x, y, consoleInfo.dwSize.X - x, ptr);
         }
         /// <summary>
         /// Retrieve text from console window
