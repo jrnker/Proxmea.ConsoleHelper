@@ -14,8 +14,9 @@
     <RepositoryUrl>https://github.com/jrnker/Proxmea.ConsoleHelper</RepositoryUrl>
     <PackageTags>console;screen buffer;ReadConsoleOutput;CONSOLE_SCREEN_BUFFER_INFO;screen scrape;terminal</PackageTags>
     <PackageReleaseNotes>Moved class to a .net 2.0 standard library</PackageReleaseNotes>
+	<VersionPrefix>0.1.0</VersionPrefix>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
-    <FileVersion>01.0.0</FileVersion>
+    <FileVersion>0.1.0.0</FileVersion>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
