@@ -11,4 +11,7 @@
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="if &quot;$(ConfigurationName)&quot;==&quot;Debug&quot; Goto Debug&#xD;&#xA;if &quot;$(ConfigurationName)&quot;==&quot;Release&quot; Goto Release&#xD;&#xA;Goto End&#xD;&#xA;&#xD;&#xA;:Debug&#xD;&#xA;if exist &quot;C:\repo\Distribution\tools\bumpversions.exe&quot; (&#xD;&#xA;C:\repo\Distribution\tools\bumpversions.exe $(ProjectDir) -revision -reset&#xD;&#xA;)&#xD;&#xA;Goto End&#xD;&#xA;&#xD;&#xA;:Release&#xD;&#xA;&#xD;&#xA;if exist &quot;C:\repo\Distribution\tools\bumpversions.exe&quot; (&#xD;&#xA;C:\repo\Distribution\tools\bumpversions.exe $(ProjectDir) -build -reset&#xD;&#xA;)&#xD;&#xA;Goto End&#xD;&#xA;&#xD;&#xA;:End" />
   </Target>
+  <ItemGroup>
+    <ProjectReference Include="..\Proxmea.Console.Helper\Proxmea.Console.Helper.csproj" />
+  </ItemGroup>
 </Project>

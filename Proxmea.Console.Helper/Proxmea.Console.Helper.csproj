@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>Proxmea Read Buffer Console Helper</Title>
+    <Company>Proxmea AB</Company>
+    <Authors>Christoffer Järnåker</Authors>
+    <Description>Methods for reading characters from the CONSOLE </Description>
+    <Copyright>2022 Proxmea AB</Copyright>
+    <PackageProjectUrl>https://github.com/jrnker/Proxmea.ConsoleHelper</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/jrnker/Proxmea.ConsoleHelper</RepositoryUrl>
+    <PackageTags>console;screen buffer;ReadConsoleOutput;CONSOLE_SCREEN_BUFFER_INFO;screen scrape;terminal</PackageTags>
+    <PackageReleaseNotes>Moved class to a .net 2.0 standard library</PackageReleaseNotes>
+    <AssemblyVersion>0.1.0.0</AssemblyVersion>
+    <FileVersion>01.0.0</FileVersion>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
